@@ -1,10 +1,10 @@
 package eos
 
 import (
-	"eos/internal/creator"
-	"eos/internal/project"
-	"eos/internal/upgrade"
 	"fmt"
+	"github.com/go-helios/eos/internal/creator"
+	"github.com/go-helios/eos/internal/project"
+	"github.com/go-helios/eos/internal/upgrade"
 	"github.com/spf13/cobra"
 )
 

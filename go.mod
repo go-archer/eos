@@ -1,4 +1,4 @@
-module eos
+module github.com/go-helios/eos
 
 go 1.21.0
 

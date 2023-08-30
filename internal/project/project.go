@@ -2,9 +2,9 @@ package project
 
 import (
 	"bytes"
-	"eos/pkg/util"
 	"fmt"
 	"github.com/AlecAivazis/survey/v2"
+	"github.com/go-helios/eos/pkg/util"
 	"github.com/spf13/cobra"
 	"io/fs"
 	"os"

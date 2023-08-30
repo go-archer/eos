@@ -1,9 +1,9 @@
 package creator
 
 import (
-	"eos/pkg/util"
-	"eos/tpls"
 	"fmt"
+	"github.com/go-helios/eos/pkg/util"
+	"github.com/go-helios/eos/tpls"
 	"github.com/spf13/cobra"
 	"log"
 	"path/filepath"

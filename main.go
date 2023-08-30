@@ -1,8 +1,8 @@
 package main
 
 import (
-	"eos/cmd/eos"
 	"fmt"
+	"github.com/go-helios/eos/cmd/eos"
 )
 
 func main() {
