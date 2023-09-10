@@ -32,7 +32,7 @@ func (c *Creator) generate() {
 			filePath = fmt.Sprintf("internal/%s/", c.Type)
 		}
 	}
-	fName := strings.ToLower(c.FileName) + ".go"
+	fName := strings.ToLower(strcase.ToSnake(c.FileName)) + ".go"
 	f := util.CreateFile(filePath, fName)
 	if f == nil {
 		fmt.Printf("警告：文件 %s%s %s!\n", filePath, fName, "已存在")
