@@ -3,13 +3,14 @@ package project
 import (
 	"bytes"
 	"fmt"
-	"github.com/AlecAivazis/survey/v2"
-	"github.com/go-helios/eos/pkg/util"
-	"github.com/spf13/cobra"
 	"io/fs"
 	"os"
 	"os/exec"
 	"path/filepath"
+
+	"github.com/AlecAivazis/survey/v2"
+	"github.com/go-helios/eos/pkg/util"
+	"github.com/spf13/cobra"
 )
 
 type Project struct {

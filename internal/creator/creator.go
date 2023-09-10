@@ -2,13 +2,15 @@ package creator
 
 import (
 	"fmt"
-	"github.com/go-helios/eos/pkg/util"
-	"github.com/go-helios/eos/tpls"
-	"github.com/spf13/cobra"
 	"log"
 	"path/filepath"
 	"strings"
 	"text/template"
+
+	"github.com/go-helios/eos/pkg/util"
+	"github.com/go-helios/eos/tpls"
+	"github.com/iancoleman/strcase"
+	"github.com/spf13/cobra"
 )
 
 type Creator struct {
@@ -119,7 +121,7 @@ func run(cmd *cobra.Command, args []string) {
 	c.Project = util.ProjectName(".")
 	c.Type = cmd.Use
 	c.FilePath, c.FileName = filepath.Split(args[0])
-	c.FileName = strings.ReplaceAll(strings.ToUpper(string(c.FileName[0]))+c.FileName[1:], ".go", "")
+	c.FileName = strings.ReplaceAll(strcase.ToCamel(c.FileName), ".go", "")
 	c.TitleLower = strings.ToLower(string(c.FileName[0]) + c.FileName[1:])
 	c.FirstChar = string(c.TitleLower[0])
 
