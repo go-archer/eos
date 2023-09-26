@@ -7,5 +7,5 @@ type {{ .FileName }} struct {
 }
 
 func (m *{{ .FileName }}) TableName() string {
- 	return "{{ .TitleLower }}"
+ 	return "{{ .FileName }}"
  }
