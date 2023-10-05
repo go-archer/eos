@@ -10,13 +10,15 @@ type {{ .FileName }}Repository interface {
 }
 
 type {{ .TitleLower }}Repository struct {
-	Repository
+	*Repository
 }
 
-func New{{ .FileName }}Repository(repository Repository) {{ .FileName }}Repository {
-	return &{{ .TitleLower }}Repository{
+func New{{ .FileName }}Repository(repository *Repository) {{ .FileName }}Repository {
+	repo:= &{{ .TitleLower }}Repository{
 		Repository: repository,
 	}
+	repo.AutoMigrate(&model.{{ .FileName }})
+	return repo
 }
 
 func (r {{ .TitleLower }}Repository) FirstById(ctx context.Context, id int64) (*model.{{ .FileName }}, error) {

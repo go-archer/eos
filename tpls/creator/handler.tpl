@@ -33,7 +33,6 @@ func (h {{ .TitleLower }}Handler) Get{{ .FileName }}ById(ctx *gin.Context) {
 	}
 
 	{{ .TitleLower }}, err := h.{{ .TitleLower }}Service.Get{{ .FileName }}ById(ctx, in)
-	h.log.Info("Get{{ .FileName }}ByID", zap.Any("{{ .TitleLower }}", {{ .TitleLower }}))
 	if err != nil {
 		h.Error(ctx, err)
 		return
