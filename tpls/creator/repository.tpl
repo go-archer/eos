@@ -10,16 +10,16 @@ type {{ .FileName }}Repository interface {
 }
 
 type {{ .TitleLower }}Repository struct {
-	*Repository
+	Repository
 }
 
-func New{{ .FileName }}Repository(repository *Repository) {{ .FileName }}Repository {
+func New{{ .FileName }}Repository(repository Repository) {{ .FileName }}Repository {
 	return &{{ .TitleLower }}Repository{
 		Repository: repository,
 	}
 }
 
-func (r *{{ .TitleLower }}Repository) FirstById(ctx context.Context, id int64) (*model.{{ .FileName }}, error) {
+func (r {{ .TitleLower }}Repository) FirstById(ctx context.Context, id int64) (*model.{{ .FileName }}, error) {
 	var {{ .TitleLower }} model.{{ .FileName }}
 	// TODO: query db
 	return &{{ .TitleLower }}, nil

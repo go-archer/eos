@@ -6,6 +6,6 @@ type {{ .FileName }} struct {
 	gorm.Model
 }
 
-func (m *{{ .FileName }}) TableName() string {
- 	return "{{ .FileName }}"
+func (m {{ .FileName }}) TableName() string {
+ 	return "{{ .TitleLower }}"
  }
