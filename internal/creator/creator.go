@@ -122,7 +122,7 @@ func run(cmd *cobra.Command, args []string) {
 	c.Type = cmd.Use
 	c.FilePath, c.FileName = filepath.Split(args[0])
 	c.FileName = strings.ReplaceAll(strcase.ToCamel(c.FileName), ".go", "")
-	c.TitleLower = strings.ToLower(string(c.FileName[0]) + c.FileName[1:])
+	c.TitleLower = strings.ToLower(strcase.ToLowerCamel(c.FileName))
 	c.FirstChar = string(c.TitleLower[0])
 
 	switch c.Type {

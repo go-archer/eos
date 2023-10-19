@@ -4,7 +4,6 @@ import (
 	"{{ .Project }}/internal/dto/request"
 	"{{ .Project }}/internal/service"
 	"github.com/gin-gonic/gin"
-	"go.uber.org/zap"
 )
 
 type {{ .FileName }}Handler interface {
@@ -24,7 +23,7 @@ func New{{ .FileName }}Handler(handler *Handler, {{ .TitleLower }}Service servic
 	}
 }
 
-func (h {{ .TitleLower }}Handler) Get{{ .FileName }}ById(ctx *gin.Context) {
+func (h *{{ .TitleLower }}Handler) Get{{ .FileName }}ById(ctx *gin.Context) {
 	in := &request.{{ .FileName }}{}
 
 	if err := h.Bind(ctx, in); err!=nil {
@@ -40,6 +39,6 @@ func (h {{ .TitleLower }}Handler) Get{{ .FileName }}ById(ctx *gin.Context) {
 	h.Success(ctx, {{ .TitleLower }})
 }
 
-func (h {{ .TitleLower }}Handler) Update{{ .FileName }}(ctx *gin.Context) {
+func (h *{{ .TitleLower }}Handler) Update{{ .FileName }}(ctx *gin.Context) {
 	h.Success(ctx, nil)
 }

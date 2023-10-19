@@ -17,11 +17,11 @@ func New{{ .FileName }}Repository(repository *Repository) {{ .FileName }}Reposit
 	repo:= &{{ .TitleLower }}Repository{
 		Repository: repository,
 	}
-	repo.AutoMigrate(&model.{{ .FileName }})
+	repo.AutoMigrate(&model.{{ .FileName }}{})
 	return repo
 }
 
-func (r {{ .TitleLower }}Repository) FirstById(ctx context.Context, id int64) (*model.{{ .FileName }}, error) {
+func (r *{{ .TitleLower }}Repository) FirstById(ctx context.Context, id int64) (*model.{{ .FileName }}, error) {
 	var {{ .TitleLower }} model.{{ .FileName }}
 	// TODO: query db
 	return &{{ .TitleLower }}, nil

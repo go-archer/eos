@@ -23,7 +23,7 @@ func New{{ .FileName }}Service(service *Service, {{ .TitleLower }}Repository rep
 	}
 }
 
-func (s {{ .TitleLower }}Service) Get{{ .FileName }}ById(ctx context.Context, in *request.{{ .FileName }}) (*response.{{ .FileName }}, error) {
+func (s *{{ .TitleLower }}Service) Get{{ .FileName }}ById(ctx context.Context, in *request.{{ .FileName }}) (*response.{{ .FileName }}, error) {
      // TODO: business logic
 	 // _, _ = s.{{ .TitleLower }}Repository.FirstById(ctx, in.ID)
 	 return &response.{{ .FileName }}{}, nil
